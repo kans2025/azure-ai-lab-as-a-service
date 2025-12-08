@@ -1,0 +1,23 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"],
+      // __PLACEHOLDER_BACKEND_API_URL__ – backend Functions App URL if using proxying
+      "rewrite": "/api/__PLACEHOLDER_BACKEND_REWRITE__"
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html"
+    }
+  ],
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/__PLACEHOLDER_TENANT_ID__/v2.0"
+        }
+      }
+    }
+  }
+}

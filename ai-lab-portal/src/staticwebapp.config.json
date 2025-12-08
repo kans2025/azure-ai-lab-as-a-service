@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
+      // Note: For SWA + Functions integrated repo, you might use "rewrite": "/api" or similar.
+      // For separate backend, just call VITE_API_BASE_URL from the SPA instead.
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html"
+    }
+  ],
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/__PLACEHOLDER_TENANT_ID__/v2.0"
+        }
+      }
+    }
+  }
+}
+

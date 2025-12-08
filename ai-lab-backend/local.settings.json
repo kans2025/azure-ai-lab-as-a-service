@@ -1,0 +1,20 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+
+    "COSMOS_ENDPOINT": "__PLACEHOLDER_LOCAL_COSMOS_ENDPOINT__",
+    "COSMOS_KEY": "__PLACEHOLDER_LOCAL_COSMOS_KEY__",
+    "COSMOS_DATABASE_NAME": "ailab-control",
+
+    "OPENAI_ENDPOINT": "__PLACEHOLDER_OPENAI_ENDPOINT__",           // e.g. https://my-aoai.openai.azure.com/
+    "OPENAI_API_KEY": "__PLACEHOLDER_OPENAI_API_KEY__",             // POC only; prod => Key Vault + MSI
+    "OPENAI_DEPLOYMENT_NAME": "__PLACEHOLDER_OPENAI_DEPLOYMENT__",  // e.g. gpt-4o-mini
+
+    "ALLOWED_AUDIENCE": "api://__PLACEHOLDER_BACKEND_APP_ID__",     // backend app registration
+    "LAB_RESOURCE_GROUP_PREFIX": "rg-ailab",                         // logical RG name prefix
+    "DEFAULT_REGION": "southindia"
+  }
+}
+
