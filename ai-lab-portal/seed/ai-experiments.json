@@ -1,0 +1,59 @@
+[
+  {
+    "id": "prompt-basics",
+    "title": "Prompt Engineering Basics",
+    "tierIds": ["student", "starter"],
+    "description": "Learn how to structure effective prompts and system instructions.",
+    "systemPrompt": "You are an AI tutor helping users learn prompt engineering. Respond clearly, step-by-step, and with examples.",
+    "maxTokensPerCall": 500,
+    "maxDailyTokensPerUser": 2000,
+    "samplePrompts": [
+      "Explain prompt engineering in simple terms.",
+      "Show examples of good and bad prompts.",
+      "How do system prompts influence responses?"
+    ]
+  },
+  {
+    "id": "chatbot-design",
+    "title": "Conversational AI Design",
+    "tierIds": ["starter", "professional"],
+    "description": "Design and refine a multi-turn conversational assistant.",
+    "systemPrompt": "You are a conversational AI architect. Help design structured, contextual chatbots.",
+    "maxTokensPerCall": 1000,
+    "maxDailyTokensPerUser": 6000,
+    "samplePrompts": [
+      "Design a chatbot for customer support.",
+      "How do I manage conversation context?",
+      "Explain fallback intents."
+    ]
+  },
+  {
+    "id": "rag-basics",
+    "title": "RAG with Azure AI Search",
+    "tierIds": ["professional", "enterprise-lite"],
+    "description": "Understand Retrieval-Augmented Generation patterns.",
+    "systemPrompt": "You are an AI engineer explaining Retrieval-Augmented Generation using Azure services.",
+    "maxTokensPerCall": 1500,
+    "maxDailyTokensPerUser": 10000,
+    "samplePrompts": [
+      "What is RAG and when should I use it?",
+      "Explain RAG architecture on Azure.",
+      "Compare RAG vs fine-tuning."
+    ]
+  },
+  {
+    "id": "code-analysis",
+    "title": "Code Analysis & Generation",
+    "tierIds": ["starter", "professional", "enterprise-lite"],
+    "description": "Analyze, explain, and generate code snippets using AI.",
+    "systemPrompt": "You are a senior software engineer helping with code analysis and generation.",
+    "maxTokensPerCall": 2000,
+    "maxDailyTokensPerUser": 12000,
+    "samplePrompts": [
+      "Explain this TypeScript function.",
+      "Refactor this code for readability.",
+      "Generate a REST API example in Node.js."
+    ]
+  }
+]
+

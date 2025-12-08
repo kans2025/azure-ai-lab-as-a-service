@@ -1,0 +1,69 @@
+[
+  {
+    "id": "student",
+    "name": "Student",
+    "description": "Guided learning labs for students and beginners.",
+    "defaultCredits": 1000,
+    "limits": {
+      "maxEnvironments": 1,
+      "maxTokensPerDay": 2000,
+      "maxConcurrentCalls": 1,
+      "labExpiryDays": 7
+    },
+    "allowedServices": [
+      "AzureOpenAI"
+    ]
+  },
+  {
+    "id": "starter",
+    "name": "Starter",
+    "description": "Individual POC labs with prompt engineering and basic RAG.",
+    "defaultCredits": 3000,
+    "limits": {
+      "maxEnvironments": 2,
+      "maxTokensPerDay": 8000,
+      "maxConcurrentCalls": 2,
+      "labExpiryDays": 14
+    },
+    "allowedServices": [
+      "AzureOpenAI",
+      "AzureAISearch"
+    ]
+  },
+  {
+    "id": "professional",
+    "name": "Professional",
+    "description": "Team-based experimentation with ML and AI Search.",
+    "defaultCredits": 8000,
+    "limits": {
+      "maxEnvironments": 3,
+      "maxTokensPerDay": 20000,
+      "maxConcurrentCalls": 4,
+      "labExpiryDays": 30
+    },
+    "allowedServices": [
+      "AzureOpenAI",
+      "AzureAISearch",
+      "AzureML"
+    ]
+  },
+  {
+    "id": "enterprise-lite",
+    "name": "Enterprise Lite",
+    "description": "Corporate sandbox with private networking and governance.",
+    "defaultCredits": 20000,
+    "limits": {
+      "maxEnvironments": 5,
+      "maxTokensPerDay": 60000,
+      "maxConcurrentCalls": 10,
+      "labExpiryDays": 60
+    },
+    "allowedServices": [
+      "AzureOpenAI",
+      "AzureAISearch",
+      "AzureML",
+      "PrivateNetworking"
+    ]
+  }
+]
+
