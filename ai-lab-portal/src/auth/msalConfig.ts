@@ -32,7 +32,8 @@ export const msalConfig: Configuration = {
 };
 
 export const loginRequest = {
-  scopes: [`${backendAppIdUri}/.default`]
+  // The exposed scope, NOT /.default
+  scopes: [`${backendAppIdUri}/user_impersonation`]
 };
 
 export const pca = new PublicClientApplication(msalConfig);

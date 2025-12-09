@@ -7,14 +7,16 @@ import TierSelection from "./routes/TierSelection";
 import Environments from "./routes/Environments";
 import ExperimentCatalog from "./routes/ExperimentCatalog";
 import ExperimentConsole from "./routes/ExperimentConsole";
+import { loginRequest } from "./auth/msalConfig";
 
 const App: React.FC = () => {
   const isAuthenticated = useIsAuthenticated();
   const { instance } = useMsal();
 
   const handleLogin = () => {
-    instance.loginRedirect();
+  instance.loginRedirect(loginRequest);
   };
+
 
   if (!isAuthenticated) {
     return (

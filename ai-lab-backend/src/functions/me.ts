@@ -10,7 +10,7 @@ export async function meHandler(req: HttpRequest, context: InvocationContext): P
   const auth = getAuthContext(req, context);
   if (!auth) return unauthorized();
 
-  // Upsert user record
+  // Try to find existing user
   const { resources: users } = await usersContainer.items
     .query<User>({
       query: "SELECT * FROM c WHERE c.userId = @userId",
@@ -18,7 +18,8 @@ export async function meHandler(req: HttpRequest, context: InvocationContext): P
     })
     .fetchAll();
 
-  let user = users[0];
+  let user: User | undefined = users[0];
+
   if (!user) {
     const newUser: User = {
       id: auth.userId,
@@ -30,8 +31,18 @@ export async function meHandler(req: HttpRequest, context: InvocationContext): P
       status: "Active",
       createdAt: new Date().toISOString()
     };
-    const res = await usersContainer.items.create(newUser);
-    user = res.resource;
+
+    const createResult = await usersContainer.items.create(newUser);
+    user = createResult.resource as User | undefined;
+  }
+
+  if (!user) {
+    // Extremely unlikely, but keeps TS happy and you get a clear runtime log if something’s wrong
+    context.error("Failed to load or create user document in Cosmos DB");
+    return {
+      status: 500,
+      jsonBody: { error: "Failed to load user profile" }
+    };
   }
 
   const { resources: subs } = await subsContainer.items
@@ -59,7 +70,7 @@ export async function meHandler(req: HttpRequest, context: InvocationContext): P
 app.http("me", {
   methods: ["GET"],
   route: "me",
-  authLevel: "anonymous", // Protected by Azure AD at the app level
+  authLevel: "anonymous", // protected via App Service / SWA auth
   handler: meHandler
 });
 

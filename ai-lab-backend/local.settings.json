@@ -4,15 +4,15 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "node",
 
-    "COSMOS_ENDPOINT": "__PLACEHOLDER_LOCAL_COSMOS_ENDPOINT__",
-    "COSMOS_KEY": "__PLACEHOLDER_LOCAL_COSMOS_KEY__",
+    "COSMOS_ENDPOINT": "https://ailabcosmos.documents.azure.com:443/",
+    "COSMOS_KEY": "P66mWYfIguGxbB5hVhZYxWDFMmNtRirykzLHgZScuzMYwSTjlVO9QvbyQVejSTNZCR3HJ9KfJrsBACDbJWIOvg==",
     "COSMOS_DATABASE_NAME": "ailab-control",
 
-    "OPENAI_ENDPOINT": "__PLACEHOLDER_OPENAI_ENDPOINT__",           // e.g. https://my-aoai.openai.azure.com/
-    "OPENAI_API_KEY": "__PLACEHOLDER_OPENAI_API_KEY__",             // POC only; prod => Key Vault + MSI
-    "OPENAI_DEPLOYMENT_NAME": "__PLACEHOLDER_OPENAI_DEPLOYMENT__",  // e.g. gpt-4o-mini
+    "OPENAI_ENDPOINT": "https://aoai-ailab-poc.openai.azure.com/openai/deployments/gpt-4.1-mini-chat/chat/completions?api-version=2025-01-01-preview",           // e.g. https://my-aoai.openai.azure.com/
+    "OPENAI_API_KEY": "4dqiTSiM9QUtnf5OtckGZdfnwZgqDSjTVsMLKzSK6cvVm4by8xIXJQQJ99BLAC77bzfXJ3w3AAABACOG6VUC",             // POC only; prod => Key Vault + MSI
+    "OPENAI_DEPLOYMENT_NAME": "gpt-4.1-mini-chat",  // e.g. gpt-4o-mini
 
-    "ALLOWED_AUDIENCE": "api://__PLACEHOLDER_BACKEND_APP_ID__",     // backend app registration
+    "ALLOWED_AUDIENCE": "api://a59ca7f8-dbca-493c-8abc-194ef3372962",     // backend app registration
     "LAB_RESOURCE_GROUP_PREFIX": "rg-ailab",                         // logical RG name prefix
     "DEFAULT_REGION": "southindia"
   }
