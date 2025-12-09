@@ -2,3 +2,4 @@ local.settings.json
 ai-lab-backend/node_modules/
 ai-lab-backend/dist/
 ai-lab-portal/node_modules/
+ai-lab-backend/local.settings.json
